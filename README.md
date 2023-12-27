@@ -16,3 +16,32 @@ body {
   }
 }
 ```
+
+5. I tried messing around with the vite config, but no luck.
+
+```ts
+import { defineConfig } from "astro/config";
+
+import tailwind from "@astrojs/tailwind";
+import postcssImport from "postcss-import";
+import postcssNested from "postcss-nested";
+import tailwindcss from "tailwindcss";
+import tailwindcssNesting from "tailwindcss/nesting";
+
+// https://astro.build/config
+export default defineConfig({
+  integrations: [tailwind({ applyBaseStyles: false })],
+  vite: {
+    css: {
+      postcss: {
+        plugins: [
+          postcssImport(),
+          postcssNested(),
+          tailwindcss(),
+          tailwindcssNesting(),
+        ],
+      },
+    },
+  },
+});
+```
