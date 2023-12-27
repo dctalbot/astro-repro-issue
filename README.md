@@ -1,5 +1,5 @@
 1. `npm create astro@latest` with sample files, typescript strict
-2. `npx astro add tailwind`
+2. `npx astro add tailwind`, set `applyBaseStyles` to `false`
 3. Add `/src/global.css` and import it in `/src/pages/index.astro`
 4. Add the following contents to global.css
 
